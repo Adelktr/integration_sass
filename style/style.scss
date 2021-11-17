@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+navbar{
+  display: flex;
+  width: 100%;
+  padding: 40px 140px 10px;
+  justify-content: space-between;
+  align-items: center;
+
+
+  .navbar-content{
+    display: flex;
+    color: white;
+    font-family: nunito;
+    font-size: 20px;
+    align-items: center;
+    ul li{
+      display: inline-block;
+      a{
+        list-style: none;
+        text-decoration: none;
+        color: white;
+        margin-right: 70px;
+      }
+    }
+    &--login{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 125px;
+      color: #93A5FF;
+      padding: 12px 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  }
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 75px 140px;
+  .header-layer{
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+  }
+  .header-content{
+    display: flex;
+    flex-direction: column;
+    font-family: nunito;
+    color: white;
+    h1{
+      font-family: roboto;
+      font-size: 49px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    >p{
+      font-size: 28px;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-bottom: 45px;
+    }
+    .input{
+      display: flex;
+      input{
+        font-size: 20px;
+        background-color: #384170;
+        border: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        color: white;
+        padding: 14px 17px;
+        font-family: nunito;
+        font-weight: 300;
+        width: 400px;
+        outline: none;
+      }
+      input::placeholder{
+        color: white;
+        opacity: 0.7;
+      }
+      .extension{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #384170;
+        padding: 14px 17px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        margin-left: 5px;
+        width: 100px;
+        font-family: nunito;
+        color: white;
+        img{
+          width: 9px;
+          height: 6px;
+        }
+      }
+      >p{
+        text-transform: uppercase;
+        background-color: #93A5FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+        border-radius: 5px;
+        letter-spacing: 0.25px;
+        margin-left: 30px;
+      }
+    }
+  }
+}
