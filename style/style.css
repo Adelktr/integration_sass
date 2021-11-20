@@ -286,4 +286,82 @@ header .header-content .input > p {
   margin-right: 15px;
 }
 
+.types {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 160px;
+  color: #2E2E2E;
+}
+.types-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 60px;
+}
+.types-cards-card {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: nunito;
+  box-shadow: 0px 10px 20px #d9d9d9;
+  width: 360px;
+  height: fit-content;
+  padding: 80px 0px 0px;
+}
+.types-cards-card h2 {
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.types-cards-card > p {
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  padding: 0px 40px;
+}
+.types-cards-card > :nth-child(n) {
+  margin-bottom: 25px;
+}
+.types-cards-card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+.types-cards-card-price > p {
+  margin-bottom: 10px;
+}
+.types-cards-card-price p:nth-of-type(2) {
+  font-size: 16px;
+}
+.types-cards-card-price p:nth-of-type(2) span {
+  font-size: 40px;
+}
+.types-cards-card-price-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.types-cards-card-price-button > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #93A5FF;
+  background-color: #F7F8FF;
+  border-radius: 5px;
+  padding: 15px 20px;
+}
+.types-cards-card-price-button > div p {
+  font-family: nunito;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
 /*# sourceMappingURL=style.css.map */
