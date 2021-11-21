@@ -420,4 +420,29 @@ header .header-content .input > p {
   margin-top: 65px;
 }
 
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+}
+.clients-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+}
+.clients a {
+  text-transform: uppercase;
+  color: white;
+  font-family: nunito;
+  font-size: 18px;
+  background-color: #93A5FF;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 80px;
+}
+
 /*# sourceMappingURL=style.css.map */
