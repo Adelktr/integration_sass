@@ -96,7 +96,7 @@ header {
 @media screen and (max-width: 880px) {
   header {
     padding: 0px 25px;
-    height: 55vh;
+    height: 60vh;
   }
 }
 header navbar {
@@ -130,7 +130,15 @@ header navbar .navbar-content ul li a {
   list-style: none;
   text-decoration: none;
   color: white;
-  margin-right: 70px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  transition: 0.5s;
+  padding: 55px 25px 13px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header navbar .navbar-content ul li a:hover {
+  background-color: #93A5FF;
 }
 header navbar .navbar-content--login {
   display: flex;
@@ -330,6 +338,9 @@ header .header-content .input div input::placeholder {
   opacity: 0.7;
 }
 header .header-content .input .extension {
+  outline: none;
+  cursor: pointer;
+  border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -346,7 +357,7 @@ header .header-content .input .extension img {
   width: 9px;
   height: 6px;
 }
-header .header-content .input > p {
+header .header-content .input > a {
   text-transform: uppercase;
   background-color: #93A5FF;
   display: flex;
@@ -358,9 +369,11 @@ header .header-content .input > p {
   margin-left: 30px;
   width: fit-content;
   text-align: center;
+  color: white;
+  text-decoration: none;
 }
 @media screen and (max-width: 880px) {
-  header .header-content .input > p {
+  header .header-content .input > a {
     margin-top: 25px;
     margin-left: 0;
   }
@@ -571,13 +584,20 @@ header .header-content .input > p {
   background-color: #fff;
   border-radius: 5px;
   padding: 15px 20px;
+  cursor: pointer;
+  transition: 0.2s;
 }
-.start-content-item-button > div p {
+.start-content-item-button > div a {
   font-family: nunito;
   font-size: 1.125rem;
   text-transform: uppercase;
   font-weight: bold;
   margin-right: 15px;
+  color: #93A5FF;
+  text-decoration: none;
+}
+.start-content-item-button > div:hover {
+  opacity: 0.8;
 }
 
 .types {
@@ -585,7 +605,7 @@ header .header-content .input > p {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 100px 160px;
+  padding: 100px 160px 150px;
   color: #2E2E2E;
 }
 @media screen and (max-width: 880px) {
@@ -613,6 +633,7 @@ header .header-content .input > p {
   width: 350px;
   height: fit-content;
   padding: 80px 0px 0px;
+  transition: 0.2s;
 }
 @media screen and (max-width: 560px) {
   .types-cards-card {
@@ -651,7 +672,7 @@ header .header-content .input > p {
   font-size: 2.5rem;
 }
 .types-cards-card-price-button {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -664,6 +685,8 @@ header .header-content .input > p {
   background-color: #F7F8FF;
   border-radius: 5px;
   padding: 15px 20px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 .types-cards-card-price-button > div p {
   font-family: nunito;
@@ -671,6 +694,15 @@ header .header-content .input > p {
   text-transform: uppercase;
   font-weight: bold;
   margin-right: 15px;
+}
+.types-cards-card-price-button > div:hover {
+  opacity: 0.8;
+}
+.types-cards-card:hover {
+  border-top: 10px solid #93A5FF;
+}
+.types-cards-card:hover div {
+  display: flex;
 }
 
 .testimonials {
@@ -782,6 +814,10 @@ header .header-content .input > p {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 80px;
+  transition: 0.2s;
+}
+.clients a:hover {
+  opacity: 0.8;
 }
 
 footer {
