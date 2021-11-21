@@ -1,13 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap');
 
+$xs: 560px;
+@mixin xs {
+  @media screen and(max-width: $xs) {
+    @content
+  }
+}
+
+$s: 880px;
+@mixin s {
+  @media screen and(max-width: $s) {
+    @content
+  }
+}
+
+$sd: 1200px;
+@mixin sd {
+  @media screen and(max-width: $sd) {
+    @content
+  }
+}
+
+$md: 1500px;
+@mixin md {
+  @media screen and(max-width: $md) {
+    @content
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
-html{
+html {
   font-size: 16px;
+  @include md {
+    font-size: 14px;
+  }
+  @include s {
+    font-size: 12px;
+  }
+}
+
+.slideInLeft{
+  animation: slideInLeft .5s;
+  transform: translateX(-80%);
+  background-color: #8C9EFC;
+}
+
+.slideInRight{
+  animation: slideInRight .5s;
+  transform: translateX(0%);
+  background-color: transparent;
+}
+
+@keyframes slideInLeft {
+  0%{
+    background-color: transparent;
+    transform: translateX(0);
+  }
+  100%{
+    background-color: #8C9EFC;
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes slideInRight {
+  0%{
+    background-color: #8C9EFC;
+    transform: translateX(-80%);
+  }
+  100%{
+    background-color: transparent;
+    transform: translateX(0);
+  }
 }
 
 .sectionTitle {
@@ -15,6 +84,7 @@ html{
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .sectionDescription {
@@ -23,73 +93,207 @@ html{
   font-size: 1.75rem;
   opacity: 0.8;
   margin-bottom: 100px;
+  text-align: center;
 }
 
-navbar {
-  display: flex;
-  width: 100%;
-  padding: 40px 140px 10px;
-  justify-content: space-between;
-  align-items: center;
-
-
-  .navbar-content {
-    display: flex;
-    color: white;
-    font-family: nunito;
-    font-size: 1.25rem;
-    align-items: center;
-
-    ul li {
-      display: inline-block;
-
-      a {
-        list-style: none;
-        text-decoration: none;
-        color: white;
-        margin-right: 70px;
-      }
-    }
-
-    &--login {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 125px;
-      color: #93A5FF;
-      padding: 12px 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-  }
-}
 
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   width: 100%;
-  height: 60vh;
+  height: 90vh;
   padding: 0px 140px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  @include md {
+    padding: 0px 75px;
+  }
+  @include sd {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  @include s {
+    padding: 0px 25px;
+    height: 55vh;
+  }
+
+  navbar {
+    display: flex;
+    width: 100%;
+    padding: 40px 130px 10px;
+    justify-content: space-between;
+    align-items: center;
+    @include md {
+      padding: 40px 25px 10px;
+    }
+
+    .navbar-content {
+      display: flex;
+      color: white;
+      font-family: nunito;
+      font-size: 1.25rem;
+      align-items: center;
+
+      @include sd {
+        display: none;
+      }
+
+      ul li {
+        display: inline-block;
+
+        a {
+          list-style: none;
+          text-decoration: none;
+          color: white;
+          margin-right: 70px;
+        }
+      }
+
+      &--login {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 125px;
+        color: #93A5FF;
+        padding: 12px 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  > .menuBurger {
+    display: none;
+    position: fixed;
+    left: 90%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 150;
+    padding-top: 10px;
+    padding-left: 15px;
+    @include sd {
+      display: flex;
+    }
+    @include xs{
+      left: 85%;
+      width: 90%;
+    }
+
+    .burgerBtn {
+      width: 20px;
+      height: 30px;
+      display: flex;
+      flex-direction: column-reverse;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 25px;
+      div {
+        width: 7px;
+        height: 7px;
+        background-color: white;
+        margin: 2px;
+        z-index: 20;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 80%;
+      margin-left: 100px;
+      @include s{
+        margin-left: 50px;
+      }
+      @include xs{
+        margin-left: 75px;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-bottom: 30px;
+
+          a {
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            font-family: nunito;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
 
   .header-img {
-    width: 750px;
+    width: 40%;
+    //margin-bottom: 150px;
+    @include sd {
+      width: 450px;
+      margin-top: 50px;
+    }
+    @include s {
+      display: none;
+    }
   }
 
   .header-layer {
     position: absolute;
-    inset: 0;
     z-index: -1;
-    width: 100%;
+    height: 100%;
+    width: 110%;
+    overflow: hidden;
+    @include s {
+      height: 80%;
+    }
+  }
+
+  > .layer1 {
+    top: -4.4rem;
+    left: -2.6rem;
+    background-color: #8C9EFC;
+    transform: rotate(-4deg);
+  }
+
+  > .layer2 {
+    background-color: #424D83;
+    top: -6.125rem;
+    left: -2.25rem;
+    transform: rotate(4deg);
+    @include s {
+      left: -2rem;
+      width: 120%;
+    }
   }
 
   .header-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     font-family: nunito;
     color: white;
+    //margin-top: 100px;
+    width: 50%;
+    @include sd {
+      margin-top: 100px;
+      width: 90%;
+    }
+    @include s {
+      margin-top: 50px;
+      width: 100%;
+    }
 
     h1 {
       font-family: roboto;
@@ -107,25 +311,40 @@ header {
 
     .input {
       display: flex;
-
-      input {
-        font-size: 1.25rem;
-        background-color: #384170;
-        border: 0;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        color: white;
-        padding: 14px 17px;
-        font-family: nunito;
-        font-weight: 300;
-        width: 400px;
-        outline: none;
+      @include s {
+        flex-direction: column;
+        align-items: center;
       }
 
-      input::placeholder {
-        color: white;
-        opacity: 0.7;
+      div {
+        display: flex;
+
+        input {
+          font-size: 1.25rem;
+          background-color: #384170;
+          border: 0;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          color: white;
+          padding: 14px 17px;
+          font-family: nunito;
+          font-weight: 300;
+          width: 400px;
+          outline: none;
+          @include s {
+            width: 300px;
+          }
+          @include xs {
+            width: 200px;
+          }
+        }
+
+        input::placeholder {
+          color: white;
+          opacity: 0.7;
+        }
       }
+
 
       .extension {
         display: flex;
@@ -139,6 +358,7 @@ header {
         width: 100px;
         font-family: nunito;
         color: white;
+
 
         img {
           width: 9px;
@@ -157,6 +377,11 @@ header {
         letter-spacing: 0.25px;
         margin-left: 30px;
         width: fit-content;
+        text-align: center;
+        @include s {
+          margin-top: 25px;
+          margin-left: 0;
+        }
       }
     }
   }
@@ -167,14 +392,22 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 250px 0px 100px;
+  margin: 0px 50px 100px;
+  @include xs {
+    margin: 0px 15px 100px;
+  }
 
   &-content {
     display: flex;
+    @include sd {
+      flex-direction: column;
+      align-items: center;
+    }
 
     &-cards {
       display: flex;
       flex-direction: column;
+
 
       div {
         display: flex;
@@ -182,6 +415,15 @@ header {
         margin-bottom: 30px;
         width: 70%;
         justify-content: space-between;
+        gap: 30px;
+        @include s {
+          width: 100%;
+        }
+
+        @include xs {
+          flex-direction: column;
+          align-items: center;
+        }
 
         img {
           width: 75px;
@@ -192,6 +434,9 @@ header {
           font-size: 1.4rem;
           text-transform: uppercase;
           margin-bottom: 20px;
+          @include s {
+            margin-bottom: 5px;
+          }
         }
 
         p {
@@ -213,10 +458,19 @@ header {
 
       :nth-child(3) {
         width: 80%;
+        @include s {
+          width: 100%;
+        }
+        @include xs {
+          display: none;
+        }
       }
 
       .square {
         position: absolute;
+        @include s {
+          display: none;
+        }
       }
 
       .square1 {
@@ -239,13 +493,16 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #F7F8FF;
-  padding: 100px 0px 75px;
+  padding: 100px 50px 75px;
+  @include xs {
+    padding: 100px 25px 75px;
+  }
 
   &-content {
     display: flex;
     justify-content: center;
-    padding: 0px 100px;
     flex-wrap: wrap;
+    gap: 50px;
 
     .item1 {
       background-color: #93A5FF;
@@ -262,15 +519,24 @@ header {
       color: white;
       padding: 50px 50px 45px 50px;
       border-radius: 10px;
-      margin: 0 50px;
-      width: 40%;
-      min-width: 550px;
+      width: 600px;
       margin-bottom: 50px;
+      @include s {
+        width: 95%;
+      }
+      @include xs {
+        width: 100%;
+        padding: 25px 25px 20px 25px;
+      }
 
       > img {
         position: absolute;
         top: 15px;
         right: 15px;
+        @include s {
+          width: 200px;
+          z-index: 5;
+        }
       }
 
       &-icon {
@@ -281,6 +547,7 @@ header {
         height: 75px;
         border-radius: 5px;
         margin-bottom: 40px;
+        z-index: 10;
       }
 
       .launch {
@@ -304,6 +571,9 @@ header {
         font-size: 1.25rem;
         margin-bottom: 20px;
         line-height: 40px;
+        @include s {
+          line-height: normal;
+        }
       }
 
       &-button {
@@ -339,11 +609,17 @@ header {
   align-items: center;
   padding: 100px 160px;
   color: #2E2E2E;
+  @include s {
+    padding: 100px 50px;
+  }
 
   &-cards {
     display: flex;
     justify-content: space-around;
-    gap: 60px;
+    gap: 50px;
+    @include md {
+      flex-wrap: wrap;
+    }
 
     &-card {
       border-radius: 10px;
@@ -352,9 +628,13 @@ header {
       align-items: center;
       font-family: nunito;
       box-shadow: 0px 10px 20px #d9d9d9;
-      width: 360px;
+      width: 350px;
       height: fit-content;
       padding: 80px 0px 0px;
+
+      @include xs {
+        width: 320px;
+      }
 
       h2 {
         font-size: 1.4rem;
@@ -362,7 +642,7 @@ header {
         font-weight: bold;
       }
 
-      >p {
+      > p {
         font-size: 1.125rem;
         line-height: 35px;
         text-align: center;
@@ -381,7 +661,7 @@ header {
         width: 100%;
         border-top: 1px solid #e5e5e5;
 
-        >p {
+        > p {
           margin-bottom: 10px;
         }
 
@@ -421,7 +701,8 @@ header {
     }
   }
 }
-.testimonials{
+
+.testimonials {
   background-color: #F7F8FF;
   display: flex;
   flex-direction: column;
@@ -429,67 +710,99 @@ header {
   justify-content: center;
   padding: 100px 200px;
   position: relative;
-  &-items{
+  @include sd {
+    padding: 100px 50px;
+  }
+
+  &-items {
     display: flex;
     justify-content: space-between;
-    &-item{
+    @include s {
+      gap: 50px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-item {
       display: flex;
       width: 45%;
       gap: 20px;
-      >img{
+      @include s {
+        width: 90%;
+        flex-direction: column;
+      }
+
+      > img {
         width: 105px;
         height: 105px;
       }
-      &-content{
+
+      &-content {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         font-family: nunito;
         color: #2E2E2E;
-        img{
+
+        img {
           width: 135px;
           margin-bottom: 25px;
         }
-        p:nth-of-type(1){
+
+        p:nth-of-type(1) {
           font-size: 1.4rem;
           font-style: italic;
           margin-bottom: 10px;
         }
-        p:nth-of-type(2){
+
+        p:nth-of-type(2) {
           font-size: 1.25rem;
           font-weight: bold;
         }
       }
     }
   }
-  >img:nth-of-type(1){
+
+  > img:nth-of-type(1) {
     position: absolute;
     bottom: -100px;
     left: 0px;
+    @include s {
+      display: none;
+    }
   }
-  >img:nth-of-type(2){
+
+  > img:nth-of-type(2) {
     position: absolute;
     top: -100px;
     right: 0px;
+    @include s {
+      display: none;
+    }
   }
-  >img:nth-of-type(3){
+
+  > img:nth-of-type(3) {
     margin-top: 65px;
   }
 }
 
-.clients{
+.clients {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 100px 50px;
-  &-content{
+
+  &-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 90%;
+    flex-wrap: wrap;
+    gap: 50px;
   }
-  a{
+
+  a {
     text-transform: uppercase;
     color: white;
     font-family: nunito;
@@ -502,70 +815,131 @@ header {
   }
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
   font-family: nunito;
-  margin-top: 175px;
-  padding: 0px 50px;
-  >img{
+  padding: 250px 50px 0px;
+  overflow: hidden;
+  width: 100%;
+  @include xs {
+    padding-top: 0px;
+    height: 50vh;
+  }
+
+  .footerLayer {
     position: absolute;
-    width: 100%;
+    width: 110%;
+    height: 100%;
     bottom: 0px;
     z-index: -10;
   }
-  .footer-blocs{
+
+  .footerLayer:nth-of-type(1) {
+    bottom: -5.4rem;
+    left: -2.7rem;
+    background-color: #8C9EFC;
+    transform: rotate(-4deg);
+    @include s {
+      left: 0;
+    }
+  }
+
+  .footerLayer:nth-of-type(2) {
+    bottom: -6.125rem;
+    left: -2.25rem;
+    background-color: #424D83;
+    transform: rotate(4deg);
+    @include s {
+      width: 125%;
+    }
+  }
+
+  .footer-blocs {
     display: flex;
     justify-content: space-between;
     width: 90%;
-    &-bloc{
+    flex-wrap: wrap;
+    gap: 25px;
+    @include xs {
+      display: none;
+    }
+
+    &-bloc {
       display: flex;
       flex-direction: column;
-      h3{
+
+      h3 {
         margin-bottom: 24px;
         font-size: 1.4rem;
         font-weight: bold;
         color: white;
       }
-      a{
+
+      a {
         text-decoration: none;
         font-size: 1.25rem;
         color: white;
+        @include xs {
+          display: none;
+        }
       }
-      &-payment{
+
+      &-payment {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
       }
     }
   }
-  .footer-bottom{
+
+  .footer-bottom {
     display: flex;
     width: 90%;
     justify-content: space-between;
     color: white;
     margin-top: 125px;
     margin-bottom: 125px;
-    &-links{
+    @include xs {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 0;
+      margin-bottom: 0px;
+      height: 50%;
+    }
+
+    &-links {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      >.social{
+      @include xs {
+        align-items: center;
+        gap: 20px;
+      }
+
+      > .social {
         display: flex;
         gap: 15px;
       }
-      >.policy{
+
+      > .policy {
         display: flex;
         margin-top: 25px;
-        a{
+
+        a {
           padding: 5px 20px;
           text-decoration: none;
           color: white;
+          @include xs {
+            padding: 5px 10px;
+          }
         }
-        a:nth-of-type(1){
+
+        a:nth-of-type(1) {
           border-right: 1px solid white;
         }
       }
