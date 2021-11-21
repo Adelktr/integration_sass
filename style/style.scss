@@ -6,9 +6,13 @@
   box-sizing: border-box;
 }
 
+html{
+  font-size: 16px;
+}
+
 .sectionTitle {
   font-family: nunito;
-  font-size: 35px;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -16,7 +20,7 @@
 .sectionDescription {
   color: #2E2E2E;
   font-family: nunito;
-  font-size: 28px;
+  font-size: 1.75rem;
   opacity: 0.8;
   margin-bottom: 100px;
 }
@@ -33,7 +37,7 @@ navbar {
     display: flex;
     color: white;
     font-family: nunito;
-    font-size: 20px;
+    font-size: 1.25rem;
     align-items: center;
 
     ul li {
@@ -89,13 +93,13 @@ header {
 
     h1 {
       font-family: roboto;
-      font-size: 49px;
+      font-size: 3rem;
       font-weight: bold;
       margin-bottom: 15px;
     }
 
     > p {
-      font-size: 28px;
+      font-size: 1.75rem;
       font-weight: 400;
       opacity: 0.8;
       margin-bottom: 45px;
@@ -105,7 +109,7 @@ header {
       display: flex;
 
       input {
-        font-size: 20px;
+        font-size: 1.25rem;
         background-color: #384170;
         border: 0;
         border-top-left-radius: 5px;
@@ -185,7 +189,7 @@ header {
         }
 
         h3 {
-          font-size: 23px;
+          font-size: 1.4rem;
           text-transform: uppercase;
           margin-bottom: 20px;
         }
@@ -290,14 +294,14 @@ header {
       > p:nth-of-type(1) {
         font-family: nunito;
         font-weight: bold;
-        font-size: 23px;
+        font-size: 1.4rem;
         margin-bottom: 20px;
         text-transform: uppercase;
       }
 
       > p:nth-of-type(2) {
         font-family: nunito;
-        font-size: 20px;
+        font-size: 1.25rem;
         margin-bottom: 20px;
         line-height: 40px;
       }
@@ -317,7 +321,7 @@ header {
 
           p {
             font-family: nunito;
-            font-size: 18px;
+            font-size: 1.125rem;
             text-transform: uppercase;
             font-weight: bold;
             margin-right: 15px;
@@ -353,13 +357,13 @@ header {
       padding: 80px 0px 0px;
 
       h2 {
-        font-size: 23px;
+        font-size: 1.4rem;
         text-transform: uppercase;
         font-weight: bold;
       }
 
       >p {
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 35px;
         text-align: center;
         padding: 0px 40px;
@@ -382,10 +386,10 @@ header {
         }
 
         p:nth-of-type(2) {
-          font-size: 16px;
+          font-size: 1rem;
 
           span {
-            font-size: 40px;
+            font-size: 2.5rem;
           }
         }
 
@@ -406,7 +410,7 @@ header {
 
             p {
               font-family: nunito;
-              font-size: 18px;
+              font-size: 1.125rem;
               text-transform: uppercase;
               font-weight: bold;
               margin-right: 15px;
@@ -447,12 +451,12 @@ header {
           margin-bottom: 25px;
         }
         p:nth-of-type(1){
-          font-size: 23px;
+          font-size: 1.4rem;
           font-style: italic;
           margin-bottom: 10px;
         }
         p:nth-of-type(2){
-          font-size: 20px;
+          font-size: 1.25rem;
           font-weight: bold;
         }
       }
@@ -489,11 +493,82 @@ header {
     text-transform: uppercase;
     color: white;
     font-family: nunito;
-    font-size: 18px;
+    font-size: 1.125rem;
     background-color: #93A5FF;
     padding: 15px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 80px;
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  font-family: nunito;
+  margin-top: 175px;
+  padding: 0px 50px;
+  >img{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    z-index: -10;
+  }
+  .footer-blocs{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    &-bloc{
+      display: flex;
+      flex-direction: column;
+      h3{
+        margin-bottom: 24px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: white;
+      }
+      a{
+        text-decoration: none;
+        font-size: 1.25rem;
+        color: white;
+      }
+      &-payment{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .footer-bottom{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    color: white;
+    margin-top: 125px;
+    margin-bottom: 125px;
+    &-links{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      >.social{
+        display: flex;
+        gap: 15px;
+      }
+      >.policy{
+        display: flex;
+        margin-top: 25px;
+        a{
+          padding: 5px 20px;
+          text-decoration: none;
+          color: white;
+        }
+        a:nth-of-type(1){
+          border-right: 1px solid white;
+        }
+      }
+    }
   }
 }

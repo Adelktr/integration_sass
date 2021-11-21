@@ -5,9 +5,13 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 .sectionTitle {
   font-family: nunito;
-  font-size: 35px;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -15,7 +19,7 @@
 .sectionDescription {
   color: #2E2E2E;
   font-family: nunito;
-  font-size: 28px;
+  font-size: 1.75rem;
   opacity: 0.8;
   margin-bottom: 100px;
 }
@@ -31,7 +35,7 @@ navbar .navbar-content {
   display: flex;
   color: white;
   font-family: nunito;
-  font-size: 20px;
+  font-size: 1.25rem;
   align-items: center;
 }
 navbar .navbar-content ul li {
@@ -81,12 +85,12 @@ header .header-content {
 }
 header .header-content h1 {
   font-family: roboto;
-  font-size: 49px;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 15px;
 }
 header .header-content > p {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 400;
   opacity: 0.8;
   margin-bottom: 45px;
@@ -95,7 +99,7 @@ header .header-content .input {
   display: flex;
 }
 header .header-content .input input {
-  font-size: 20px;
+  font-size: 1.25rem;
   background-color: #384170;
   border: 0;
   border-top-left-radius: 5px;
@@ -167,7 +171,7 @@ header .header-content .input > p {
   height: 75px;
 }
 .gain-content-cards div h3 {
-  font-size: 23px;
+  font-size: 1.4rem;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -255,13 +259,13 @@ header .header-content .input > p {
 .start-content-item > p:nth-of-type(1) {
   font-family: nunito;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 1.4rem;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 .start-content-item > p:nth-of-type(2) {
   font-family: nunito;
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-bottom: 20px;
   line-height: 40px;
 }
@@ -280,7 +284,7 @@ header .header-content .input > p {
 }
 .start-content-item-button > div p {
   font-family: nunito;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-transform: uppercase;
   font-weight: bold;
   margin-right: 15px;
@@ -311,12 +315,12 @@ header .header-content .input > p {
   padding: 80px 0px 0px;
 }
 .types-cards-card h2 {
-  font-size: 23px;
+  font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: bold;
 }
 .types-cards-card > p {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 35px;
   text-align: center;
   padding: 0px 40px;
@@ -336,10 +340,10 @@ header .header-content .input > p {
   margin-bottom: 10px;
 }
 .types-cards-card-price p:nth-of-type(2) {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .types-cards-card-price p:nth-of-type(2) span {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 .types-cards-card-price-button {
   display: flex;
@@ -358,7 +362,7 @@ header .header-content .input > p {
 }
 .types-cards-card-price-button > div p {
   font-family: nunito;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-transform: uppercase;
   font-weight: bold;
   margin-right: 15px;
@@ -398,12 +402,12 @@ header .header-content .input > p {
   margin-bottom: 25px;
 }
 .testimonials-items-item-content p:nth-of-type(1) {
-  font-size: 23px;
+  font-size: 1.4rem;
   font-style: italic;
   margin-bottom: 10px;
 }
 .testimonials-items-item-content p:nth-of-type(2) {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 .testimonials > img:nth-of-type(1) {
@@ -437,12 +441,83 @@ header .header-content .input > p {
   text-transform: uppercase;
   color: white;
   font-family: nunito;
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: #93A5FF;
   padding: 15px 20px;
   text-decoration: none;
   border-radius: 5px;
   margin-top: 80px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  font-family: nunito;
+  margin-top: 175px;
+  padding: 0px 50px;
+}
+footer > img {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  z-index: -10;
+}
+footer .footer-blocs {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+footer .footer-blocs-bloc {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-blocs-bloc h3 {
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+footer .footer-blocs-bloc a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+}
+footer .footer-blocs-bloc-payment {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+footer .footer-bottom {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  color: white;
+  margin-top: 125px;
+  margin-bottom: 125px;
+}
+footer .footer-bottom-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+footer .footer-bottom-links > .social {
+  display: flex;
+  gap: 15px;
+}
+footer .footer-bottom-links > .policy {
+  display: flex;
+  margin-top: 25px;
+}
+footer .footer-bottom-links > .policy a {
+  padding: 5px 20px;
+  text-decoration: none;
+  color: white;
+}
+footer .footer-bottom-links > .policy a:nth-of-type(1) {
+  border-right: 1px solid white;
 }
 
 /*# sourceMappingURL=style.css.map */
